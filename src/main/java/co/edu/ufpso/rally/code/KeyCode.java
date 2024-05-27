@@ -6,6 +6,8 @@ import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import static com.mongodb.client.model.Filters.eq;
+import com.mongodb.client.model.Updates;
+import org.bson.conversions.Bson;
 
 public class KeyCode {
 
@@ -19,10 +21,13 @@ public class KeyCode {
             Document doc = collection.find(eq("readed", false)).first();
 
             if (doc != null) {
+                Bson updates = Updates.set("readed", true);
+                collection.updateOne(doc, updates);
+
                 System.out.println("""
                                    *** ---
                                    
-                                   Aún debes trabajar!!!""");
+                                   Ahora el templo del conocimiento debes visitar, la siguiente llave debes usar:""" + " " + doc.get("book_id"));
                 System.out.println("\n --- ***");
             } else {
                 System.out.println("No se han encontrado datos");
