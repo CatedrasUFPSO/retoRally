@@ -29,6 +29,7 @@ public class KeyCode {
                                    
                                    Ahora el templo del conocimiento debes visitar, la siguiente llave debes usar:""" + " " + doc.get("book_id"));
                 System.out.println("\n --- ***");
+                System.out.println("TEN EN CUENTA QUE AL USAR LA LLAVE EN LA SIGUIENTE ESTACIÓN EL GUION BAJO LO DEBES CAMBIAR POR UN ESPACIO EN BLANCO");
             } else {
                 System.out.println("No se han encontrado datos");
             }
